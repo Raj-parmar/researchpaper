@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-lg"><br/>
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Calculation</h1>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Slope:</strong> <span id="slope"></span> </p>
+                <p><strong>Intercept:</strong> <span id="intercept"></span> </p>
+            </div>
+        </div>
+        <br/>
+        <div class="row">        
+            <div class="col-md-6 card">
+                <div class="card-body">
+                    <button class="btn btn-primary" style="margin-bottom: 10px;" onclick="addRow()">Add Row</button>
+                    <table class="table table-bordered border-primary" id="mainTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">μM</th>
+                                <th scope="col">Int.</th>
+                                <th scope="col">I0/I</th>
+                                <th scope="col">(I0/I)-1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td> 
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span>
+                        <strong style="margin-left: 50px;" id="avrUm"></strong><strong style="margin-left: 110px;" id="avrInc"></strong>
+                    </span>
+                    <p>Average</p>
+                    
+                </div>
+            </div>
+            <div class="col-md-6 card">
+                <div class="card-body">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary" style="margin-bottom: 10px;" onclick="samAddRow()">Add Row</button>
+                    </div>
+                    <table class="table table-bordered border-primary" id="samTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Code</th>
+                                <th scope="col">Spiked</th>
+                                <th scope="col">μM</th>
+                                <th scope="col">Int.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td contenteditable="true"></td>
+                                <td contenteditable="true"></td>
+                                <td></td>
+                                <td contenteditable="true"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <div class="" id="myDiv"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <script src="script.js"></script>
+    <script src="custom.js"></script> 
+</body>
+</html>
