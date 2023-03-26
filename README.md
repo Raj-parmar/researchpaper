@@ -1,0 +1,2 @@
+# researchpaper
+Slope Calculation 
