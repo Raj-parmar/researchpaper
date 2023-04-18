@@ -5,6 +5,8 @@ let trace = {
     type: 'scatter'
 };
 
+document.getElementById("second").style.display = 'none';
+
 function addRow() {
     let table = document.getElementById("mainTable");
     let row = table.insertRow(-1);
@@ -20,16 +22,28 @@ function addRow() {
 
 //sam
 function samAddRow() {
-    let table = document.getElementById("samTable");
-    let row = table.insertRow(-1);
-    let cell1 = row.insertCell(0);
-    let cell2 = row.insertCell(1);
-    let cell3 = row.insertCell(2);
-    let cell4 = row.insertCell(3);
-    cell1.contentEditable = "true";
-    cell2.contentEditable = "true";
-    cell3.innerHTML = "0";
-    cell1.contentEditable = "true";
+    let tables = document.getElementById("samTable");
+    let j = 1,k = 1;
+    for (let i = 1; i <= 16; i++) {
+        let row = tables.insertRow(-1);
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+        let cell4 = row.insertCell(3);
+        if(j === 5 ){ j = 1,k++}
+        cell1.innerHTML = "S"+(k);
+        cell2.contentEditable = "true";
+        cell3.innerHTML = "0";
+        cell4.contentEditable = "true";
+        j++;
+    }
+}
+
+function nextTable(){
+    let mainTable = document.getElementById("first");
+    mainTable.style.display = 'none'; 
+    document.getElementById("second").style.display = '';
+    samAddRow()
 }
 
 function updateData() {
@@ -74,7 +88,7 @@ function updateData() {
         let int = parseFloat(mainTable.rows[i].cells[1].textContent);
         //slop calculation 
         slopX.push((um-avrUm)) 
-        slopY.push((um-avrInc))          
+        slopY.push((int-avrInc))          
     }
 
     for (let i = 0; i < slopX.length; i++) {
@@ -93,17 +107,20 @@ function updateData() {
 
     console.log("Total slopX: ",slopX)
     console.log("Total slopY: ",slopY)
+    console.log("Total x * y: ",sumTemp)
     console.log("Total sum: ",sum)
+    console.log("Total slopeX2Temp: ",slopeX2Temp)
     console.log("Total slopeX2: ",slopeX2)
     
     totalSlope = sum/slopeX2;
     slope.innerText = totalSlope;
-
+    
     
     totalIntercept = avrInc - (totalSlope*avrUm)
     intercept.innerText =totalIntercept ;
-    //18337.23977.
     
+    console.log("Total totalSlope: ",totalSlope)
+    console.log("Total slopeX2: ",totalIntercept)
     
 
     trace.x = tableData.map(function (value) { return value[0]; });
@@ -121,10 +138,39 @@ function updateData() {
 
         // tableData.push([um, int]);
     }
+
+
+}
+
+function standardAdditionMethod(){
+    let slope = document.getElementById("slope").textContent;
+    let intercept = document.getElementById("intercept").textContent;
+
+    
+    
+    let mainTable = document.getElementById("samTable");
+    let mainNumRows = mainTable.rows.length;
+    let j = 1,k = 1,um = 0,avgX = [],avgXTemp = 0;
+    for (let i = 1; i < mainNumRows; i++) {
+
+        
+        let int = parseFloat(mainTable.rows[i].cells[3].textContent);
+        um = (int-intercept)/slope;
+        mainTable.rows[i].cells[2].innerHTML = um.toFixed(2);
+        avgXTemp += +um;
+        if(j === 5){
+            avgX.push(avgXTemp/4);
+            j = 1,
+            k++
+            avgXTemp = 0
+            um = 0
+        }
+    }
+
 }
 
 setInterval(function () {
     updateData();
-    Plotly.newPlot('myDiv', [trace]);
-    
+    standardAdditionMethod();
+    Plotly.newPlot('myDiv', [trace]);    
 }, 1000);

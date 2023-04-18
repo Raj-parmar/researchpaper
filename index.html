@@ -19,10 +19,11 @@
             </div>
         </div>
         <br/>
-        <div class="row">        
-            <div class="col-md-6 card">
+        <div class="row" id="first">        
+            <div class="col-md-12 card">
                 <div class="card-body">
                     <button class="btn btn-primary" style="margin-bottom: 10px;" onclick="addRow()">Add Row</button>
+                    <button class="btn btn-primary float-end" style="margin-bottom: 10px;" onclick="nextTable()">Next Step</button>
                     <table class="table table-bordered border-primary" id="mainTable">
                         <thead>
                             <tr>
@@ -48,7 +49,10 @@
                     
                 </div>
             </div>
-            <div class="col-md-6 card">
+        </div>
+        <br>
+        <div class="row" id="second">        
+            <div class="col-md-12 card">
                 <div class="card-body">
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
@@ -64,18 +68,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
+                                <td>s1</td>
                                 <td contenteditable="true"></td>
+                                <td>0</td>
                                 <td contenteditable="true"></td>
-                                <td></td>
-                                <td contenteditable="true"></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        <br>
         <div class="row">
             <div class="card">
                 <div class="card-body">
@@ -85,7 +88,7 @@
         </div>
         <br>
     </div>
-    <!-- <script src="script.js"></script>
-    <script src="custom.js"></script>  -->
+    <script src="script.js"></script>
+    <script src="custom.js"></script> 
 </body>
 </html>
