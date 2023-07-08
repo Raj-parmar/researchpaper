@@ -51,13 +51,12 @@
             </div>
         </div>
         <br>
+        <!-- Standard addition method table -->
         <div class="row" id="second">        
             <div class="col-md-12 card">
                 <div class="card-body">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
-                        <button class="btn btn-primary" style="margin-bottom: 10px;" onclick="samAddRow()">Add Row</button>
-                    </div>
+                    <button class="btn btn-primary" style="margin-bottom: 10px;" onclick="backFun('first')">Back</button>
+                    <button class="btn btn-primary float-end" style="margin-bottom: 10px;" onclick="nextTable2()">Next Step</button>
                     <table class="table table-bordered border-primary" id="samTable">
                         <thead>
                             <tr>
@@ -79,6 +78,185 @@
                 </div>
             </div>
         </div>
+
+        <!-- Water Sample 1 -->
+        <div class="row" id="third">        
+            <div class="col-md-12 card">
+                <div class="card-body">
+                    <button class="btn btn-primary" style="margin-bottom: 10px;" onclick="backFun('second')">Back</button>
+                    <button class="btn btn-primary float-end" style="margin-bottom: 10px;" onclick="nextTable3()">Next Step</button>
+                </div>
+                <!-- Water Sample 1 -->
+                <div class="card-body">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6"></div>
+                    <table class="table table-bordered border-primary" id="wst1">
+                        <thead>
+                          <tr>
+                            <th scope="col">Spiked</th>
+                            <th scope="col">get</th>
+                            <th scope="col">Average</th>
+                            <th scope="col">% RSD</th>
+                            <th scope="col">% Recovery</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td></td><td></td><td rowspan="4"></td><td rowspan="4"></td><td rowspan="4"></td></tr>
+                          <tr><td></td><td></td></tr>
+                          <tr><td></td><td></td></tr>
+                          <tr><td></td><td></td></tr>   
+                        </tbody>
+                    </table>
+                    <p>
+                        <b>Mean Diff: </b><span id="meanDiff1"></span> &nbsp;&nbsp;
+                        <b>SD: </b> <span id="sd1"></span> &nbsp;&nbsp;
+                        <b>Spiked: </b><span id="spiked1"></span> &nbsp;&nbsp;
+                        <b>Spiked Total: </b><span id="spikedTotal1"></span>
+                    </p>
+                </div>
+
+                <!-- Water Sample 2 -->
+                <div class="card-body">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6"></div>
+                    <table class="table table-bordered border-primary" id="wst2">
+                        <thead>
+                          <tr>
+                            <th scope="col">Spiked</th>
+                            <th scope="col">get</th>
+                            <th scope="col">Average</th>
+                            <th scope="col">% RSD</th>
+                            <th scope="col">% Recovery</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td></td><td></td><td rowspan="4"></td><td rowspan="4"></td><td rowspan="4"></td></tr>
+                          <tr><td></td><td></td></tr>
+                          <tr><td></td><td></td></tr>
+                          <tr><td></td><td></td></tr>   
+                        </tbody>
+                    </table>
+                    <p>
+                        <b>Mean Diff: </b><span id="meanDiff2"></span> &nbsp;&nbsp;
+                        <b>SD: </b> <span id="sd2"></span> &nbsp;&nbsp;
+                        <b>Spiked: </b><span id="spiked2"></span> &nbsp;&nbsp;
+                        <b>Spiked Total: </b><span id="spikedTotal2"></span>
+                    </p>
+                </div>
+
+                <!-- Water Sample 3 -->
+                <div class="card-body">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6"></div>
+                    <table class="table table-bordered border-primary" id="wst3">
+                        <thead>
+                          <tr>
+                            <th scope="col">Spiked</th>
+                            <th scope="col">get</th>
+                            <th scope="col">Average</th>
+                            <th scope="col">% RSD</th>
+                            <th scope="col">% Recovery</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td></td><td></td><td rowspan="4"></td><td rowspan="4"></td><td rowspan="4"></td></tr>
+                          <tr><td></td><td></td></tr>
+                          <tr><td></td><td></td></tr>
+                          <tr><td></td><td></td></tr>   
+                        </tbody>
+                    </table>
+                    <p>
+                        <b>Mean Diff: </b><span id="meanDiff3"></span> &nbsp;&nbsp;
+                        <b>SD: </b> <span id="sd3"></span> &nbsp;&nbsp;
+                        <b>Spiked: </b><span id="spiked3"></span> &nbsp;&nbsp;
+                        <b>Spiked Total: </b><span id="spikedTotal3"></span>
+                    </p>
+                </div>
+
+                <!-- Water Sample 4 -->
+                <div class="card-body">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6"></div>
+                    <table class="table table-bordered border-primary" id="wst4">
+                        <thead>
+                          <tr>
+                            <th scope="col">Spiked</th>
+                            <th scope="col">get</th>
+                            <th scope="col">Average</th>
+                            <th scope="col">% RSD</th>
+                            <th scope="col">% Recovery</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td></td><td></td><td rowspan="4"></td><td rowspan="4"></td><td rowspan="4"></td></tr>
+                          <tr><td></td><td></td></tr>
+                          <tr><td></td><td></td></tr>
+                          <tr><td></td><td></td></tr>   
+                        </tbody>
+                    </table>
+                    <p>
+                        <b>Mean Diff: </b><span id="meanDiff4"></span> &nbsp;&nbsp;
+                        <b>SD: </b> <span id="sd4"></span> &nbsp;&nbsp;
+                        <b>Spiked: </b><span id="spiked4"></span> &nbsp;&nbsp;
+                        <b>Spiked Total: </b><span id="spikedTotal4"></span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+         <!-- Last summary table -->
+         <div class="row" id="four">        
+            <div class="col-md-12 card">
+                <div class="card-body">
+                    <button class="btn btn-primary" style="margin-bottom: 10px;" onclick="backFun('third')">Back</button>
+                    <!-- <button class="btn btn-primary float-end" style="margin-bottom: 10px;" onclick="nextTable4()">Next Step</button> -->
+                    <table class="table table-bordered border-primary" id="summaryTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sample</th>
+                                <th scope="col">Spiked Ag Concentration (μM)</th>
+                                <th scope="col">Recovered Conc. of Ag  (μM, N=4,mean ± SD)</th>
+                                <th scope="col">% RSD</th>
+                                <th scope="col">% Recovery</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>S1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>S2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>S3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>S4</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- chart code -->
         <div class="row">
             <div class="card">
                 <div class="card-body">
